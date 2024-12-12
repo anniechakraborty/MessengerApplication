@@ -1,6 +1,6 @@
 spring:
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: kafka:9093  # Use the Kafka service name within the Docker network
     consumer:
       group-id: mailer-group
       auto-offset-reset: earliest
@@ -9,6 +9,7 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
   mail:
     host: smtp.example.com
     port: 587
